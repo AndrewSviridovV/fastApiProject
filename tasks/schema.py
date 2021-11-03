@@ -1,12 +1,11 @@
-from uuid import UUID, uuid4
 
-from pydantic import BaseModel, Field, Json
+from pydantic import BaseModel,  Json, UUID4
 
 
-class Task(BaseModel):
-    task_uuid: UUID = Field(default_factory=uuid4)
+class TaskItem(BaseModel):
     description: str
     params: Json
 
-    class Config:
-        orm_mode = True
+
+class Task(TaskItem):
+    task_uuid: UUID4

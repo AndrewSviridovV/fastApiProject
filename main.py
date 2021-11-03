@@ -8,9 +8,7 @@ from tasks.route import task_route
 
 app.include_router(task_route, prefix="/tasks", tags=["task"])
 
-@app.get("/")
-def home():
-    return {"message": "/tasks"}
+
 
 
 if __name__ == '__main__':
